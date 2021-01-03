@@ -1,4 +1,5 @@
 import "./App.css";
+import Post from "./Post";
 
 function App() {
   return (
@@ -10,9 +11,10 @@ function App() {
           className="app__headerImage"
         />
       </div>
-      <h1>Hello lets build an instagram clone</h1>
+      <Post />
+      <Post />
+      <Post />
 
-      {/* posts */}
       {/* posts */}
     </div>
   );
