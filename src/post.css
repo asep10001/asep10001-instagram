@@ -16,6 +16,21 @@
 .post .post__text {
   font-weight: normal;
   padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.post .post__comments {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
 }
 
 .post .post__header {
@@ -30,5 +45,28 @@
 
 .post .post__header .post__avatar {
   margin-right: 10px;
+}
+
+.post .post__commentBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+}
+
+.post .post__commentBox .post__input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.post .post__commentBox .post__button {
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+  border: none;
+  color: #6082a3;
+  background-color: transparent;
+  border-top: 1px solid lightgray;
 }
 /*# sourceMappingURL=post.css.map */

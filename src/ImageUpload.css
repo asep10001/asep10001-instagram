@@ -1,1 +1,20 @@
-/* No CSS *//*# sourceMappingURL=ImageUpload.css.map */
+.imageupload {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.imageupload .__progress {
+  width: 100%;
+}
+/*# sourceMappingURL=ImageUpload.css.map */

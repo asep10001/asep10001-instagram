@@ -1,22 +1,36 @@
-*{
+* {
   margin: 0;
 }
 
-.App{
-background-color: #fafafa;
+.App {
+  background-color: #fafafa;
 }
 
-.app__header{
+.app__header {
   background-color: white;
   object-fit: contain;
   padding: 20px;
   border-bottom: 1px solid lightgray;
+  display: flex;
+  justify-content: space-between;
 }
 
-.app__headerImage{
+.app__headerImage {
+  object-fit: contain;
 }
 
-.app___signup{
+.app___signup {
   display: flex;
   flex-direction: column;
+}
+
+.app__posts {
+  padding: 20px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: -webkit-center;
+}
+.app__h3Warning{
+  text-align: center;
 }

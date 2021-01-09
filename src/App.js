@@ -6,6 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import { Button, Input } from "@material-ui/core";
 import ImageUpload from "./ImageUpload";
+import InstagramEmbed from "react-instagram-embed";
 
 function getModalStyle() {
   const top = 50;
@@ -91,11 +92,6 @@ function App() {
   };
   return (
     <div className="App">
-      {user?.displayName ? (
-        <ImageUpload username={user.displayName} />
-      ) : (
-        <h3>Log In to Upload</h3>
-      )}
       <Modal open={open} onClose={() => setOpen(false)}>
         <div style={modalStyle} className={classes.paper}>
           <center>
@@ -167,25 +163,48 @@ function App() {
           alt=""
           className="app__headerImage"
         />
+
+        {user ? (
+          <Button onClick={() => auth.signOut()}>Sign Out</Button>
+        ) : (
+          <div className="app__loginContainer">
+            <Button onClick={() => setOpenSignIn(true)}>Sign in</Button>
+            <Button onClick={() => setOpen(true)}>Sign up</Button>
+          </div>
+        )}
       </div>
 
-      {user ? (
-        <Button onClick={() => auth.signOut()}>Sign Out</Button>
-      ) : (
-        <div className="app__loginContainer">
-          <Button onClick={() => setOpenSignIn(true)}>Sign in</Button>
-          <Button onClick={() => setOpen(true)}>Sign up</Button>
-        </div>
-      )}
+      <div className="app__posts">
+        {posts.map(({ id, post }) => (
+          <Post
+            key={id}
+            postId={id}
+            imageUrl={post.imageUrl}
+            user={user}
+            username={post.username}
+            caption={post.caption}
+          />
+        ))}
+      </div>
+      <InstagramEmbed
+        url='https://www.instagram.com/p/CGJQNIGDqiSzQXfX40jBeNHT5QBLETHJI8HTVI0/'
+        clientAccessToken='1006009619806159|e2491558b21d11f2d8a23553f264948d'
+        maxWidth={320}
+        hideCaption={false}
+        containerTagName="div"
+        protocol=""
+        injectScript
+        onLoading={() => {}}
+        onAfterRender={() => {}}
+        onSuccess={() => {}}
+        onFailure={() => {}}
+      />
 
-      {posts.map(({ id, post }) => (
-        <Post
-          key={id}
-          imageUrl={post.imageUrl}
-          username={post.username}
-          caption={post.caption}
-        />
-      ))}
+      {user?.displayName ? (
+        <ImageUpload username={user.displayName} />
+      ) : (
+        <h3 className='app__h3Warning'>Log In to Upload</h3>
+      )}
     </div>
   );
 }
