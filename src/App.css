@@ -15,3 +15,8 @@ background-color: #fafafa;
 
 .app__headerImage{
 }
+
+.app___signup{
+  display: flex;
+  flex-direction: column;
+}
